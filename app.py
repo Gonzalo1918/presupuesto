@@ -134,11 +134,11 @@ st.header("Ítems (usar la tabla para agregar/editar)")
 if "productos_df" not in st.session_state:
     st.session_state.productos_df = pd.DataFrame(
         {
-            "descripcion": ["", "", ""],
-            "cantidad": [1,1,1],
-            "precio": [0.0,0.0,0.0],
-            "tipo_desc": ["$","$","$"],
-            "valor_desc": [0.0,0.0,0.0],
+            "descripcion": [""],
+            "cantidad": [1],
+            "precio": [0.0],
+            "tipo_desc": ["$"],
+            "valor_desc": [0.0],
         }
     )
 
@@ -389,5 +389,6 @@ if st.button("📄 Generar y descargar PDF"):
         st.error(f"Error al generar PDF: {ex}")
 
 st.caption("Los nombres de campos y la lógica de items siguen la estructura del código Flet que compartiste. Los checkboxes permiten elegir qué aparece en el PDF.")
+
 
 
