@@ -388,7 +388,7 @@ if st.button("📄 Generar y descargar PDF"):
     except Exception as ex:
         st.error(f"Error al generar PDF: {ex}")
 
-st.caption("Los nombres de campos y la lógica de items siguen la estructura del código Flet que compartiste. Los checkboxes permiten elegir qué aparece en el PDF.")
+
 
 
 
