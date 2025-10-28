@@ -92,7 +92,7 @@ def numero_a_formato(n):
     return str(n).zfill(4)
 
 # ----------------- UI -----------------
-st.title("💼 Generador de Presupuestos (campos y switches según Flet)")
+st.title("💼 Generador de Presupuestos")
 
 with st.expander("Datos de la empresa", expanded=True):
     col1, col2, col3 = st.columns(3)
@@ -114,7 +114,7 @@ with st.expander("Datos del cliente", expanded=True):
         cliente = st.text_input("Cliente", value="")
         tipo_id = st.selectbox("Tipo ID", ["CUIT","DNI","CUIL"], index=0)
     with col2:
-        numero_id = st.text_input("Número ID", value="")
+        numero_id = st.text_input(f"Número de {tipo_id}", value="")
         descripcion = st.text_area("Descripción / Nota", value="", height=80)
 
 with st.expander("Fechas e IVA", expanded=False):
@@ -387,6 +387,7 @@ if st.button("📄 Generar y descargar PDF"):
             st.success("PDF generado correctamente.")
     except Exception as ex:
         st.error(f"Error al generar PDF: {ex}")
+
 
 
 
